@@ -679,7 +679,13 @@ footer{
     border-bottom: none !important;
     backdrop-filter: none !important;
     background: #fff !important;
-  }
+ .footer-inner{
+  gap:6px;
+}
+
+.footer-inner p{
+  font-size:.95rem;
+} }
 
   .topbar-inner{
     display:flex;
