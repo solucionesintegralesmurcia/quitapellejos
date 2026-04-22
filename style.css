@@ -40,7 +40,7 @@ img{
 }
 
 .container{
-  width:min(var(--max),calc(100% - 28px));
+  width:min(var(--max), calc(100% - 28px));
   margin:auto;
 }
 
@@ -95,6 +95,7 @@ img{
   font-weight:700;
   transition:.2s ease;
   border:2px solid transparent;
+  cursor:pointer;
 }
 
 .btn-primary{
@@ -113,8 +114,22 @@ img{
   background:#fff;
 }
 
+.btn-full{
+  width:100%;
+}
+
 .hero{
   padding:54px 0 28px;
+}
+
+.page-hero{
+  padding:46px 0 10px;
+}
+
+.page-intro{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:58ch;
 }
 
 .hero-grid{
@@ -224,11 +239,10 @@ h3{
 }
 
 .panel-list li{
-  padding:14px 14px;
+  padding:14px;
   border-radius:16px;
   background:var(--soft);
   border:1px solid #f2d3cb;
-  font-weight:700;
 }
 
 .section{
@@ -319,12 +333,6 @@ h3{
   margin-bottom:4px;
 }
 
-.full-menu{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
 .contact-wrap{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -341,7 +349,6 @@ h3{
 }
 
 .contact-card .btn{
-  width:100%;
   margin-top:8px;
 }
 
@@ -353,6 +360,51 @@ h3{
   box-shadow:var(--shadow);
 }
 
+.reservation-form{
+  display:grid;
+  gap:14px;
+  margin-top:10px;
+}
+
+.reservation-form label{
+  display:grid;
+  gap:8px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.reservation-form input,
+.reservation-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  font:inherit;
+  color:var(--text);
+  outline:none;
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus{
+  border-color:var(--primary);
+}
+
+.reservation-note{
+  margin-top:16px;
+  padding:16px;
+  border-radius:16px;
+  background:var(--soft);
+  border:1px solid #f2d3cb;
+}
+
+.cta-center{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
 footer{
   padding:30px 0 42px;
   color:var(--muted);
@@ -362,7 +414,6 @@ footer{
 
 @media (max-width: 980px){
   .hero-grid,
-  .full-menu,
   .contact-wrap,
   .grid-3,
   .info-strip{
@@ -392,7 +443,8 @@ footer{
   .hero-card,
   .menu-card,
   .contact-card,
-  .panel{
+  .panel,
+  .info-strip{
     border-radius:18px;
   }
 
@@ -405,7 +457,8 @@ footer{
   }
 
   .hero-actions,
-  .nav-cta{
+  .nav-cta,
+  .cta-center{
     flex-direction:column;
   }
 
