@@ -1,1 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quitapellejos Burguer en Murcia | Hamburguesería en Santiago El Mayor</title>
+  <meta name="description" content="Quitapellejos Burguer en Murcia. Hamburguesería en Santiago El Mayor con hamburguesas, montaditos, tostas, ensaladas, entrantes, postres y bebidas. Llámanos al 968 34 64 65." />
+  <meta name="keywords" content="hamburguesería Murcia, hamburguesas Murcia, Quitapellejos Burguer, Santiago El Mayor, montaditos Murcia, cenar en Murcia" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Quitapellejos Burguer en Murcia" />
+  <meta property="og:description" content="Hamburguesería en Santiago El Mayor, Murcia. Consulta nuestra carta y llámanos para pedidos o reservas." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#a31217" />
 
+  <style>
+    :root{
+      --bg:#fff8f5;
+      --white:#ffffff;
+      --text:#241919;
+      --muted:#6d5b5b;
+      --primary:#a31217;
+      --primary-dark:#7f0d12;
+      --line:#ead7d2;
+      --soft:#fff0eb;
+      --shadow:0 14px 40px rgba(0,0,0,.08);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#fff8f5 0%,#fff 100%);
+      line-height:1.5;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--max),calc(100% - 28px));
+      margin:auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,248,245,.95);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(163,18,23,.08);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      min-height:72px;
+      padding:10px 0;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .brand strong{
+      font-size:1.2rem;
+      color:var(--primary);
+      letter-spacing:.5px;
+    }
+
+    .brand span{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    .nav-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+      border:2px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(163,18,23,.22);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-dark);
+    }
+
+    .btn-outline{
+      border-color:var(--primary);
+      color:var(--primary);
+      background:#fff;
+    }
+
+    .hero{
+      padding:54px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .hero-card,
+    .panel,
+    .menu-card,
+    .contact-card,
+    .info-strip{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card{
+      padding:34px;
+      background:
+        radial-gradient(circle at top right, rgba(163,18,23,.09), transparent 34%),
+        linear-gradient(180deg, #fff 0%, #fff7f4 100%);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--soft);
+      color:var(--primary);
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    h1,h2,h3{
+      margin:0 0 14px;
+    }
+
+    h1{
+      font-size:clamp(2rem,4vw,3.7rem);
+      line-height:1.05;
+    }
+
+    h2{
+      font-size:clamp(1.5rem,2.5vw,2.2rem);
+    }
+
+    h3{
+      font-size:1.1rem;
+    }
+
+    .hero p{
+      margin:0 0 18px;
+      font-size:1.05rem;
+      color:var(--muted);
+      max-width:58ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:22px 0 18px;
+    }
+
+    .badges{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .badge{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      text-align:center;
+      font-weight:700;
+      color:var(--primary);
+    }
+
+    .panel{
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .panel-top{
+      padding:20px 20px 12px;
+      background:var(--primary);
+      color:#fff;
+    }
+
+    .panel-body{
+      padding:20px;
+    }
+
+    .panel-list{
+      display:grid;
+      gap:12px;
+      list-style:none;
+    }
+
+    .panel-list li{
+      padding:14px 14px;
+      border-radius:16px;
+      background:var(--soft);
+      border:1px solid #f2d3cb;
+      font-weight:700;
+    }
+
+    .section{
+      padding:26px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:60ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .menu-card{
+      padding:22px;
+    }
+
+    .menu-card h3{
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+
+    .menu-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .menu-item{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      padding-bottom:12px;
+      border-bottom:1px dashed var(--line);
+    }
+
+    .menu-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .menu-item strong{
+      display:block;
+      font-size:1rem;
+    }
+
+    .menu-item small{
+      display:block;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    .price{
+      white-space:nowrap;
+      font-weight:800;
+      color:var(--primary);
+    }
+
+    .info-strip{
+      padding:22px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .info-strip div{
+      padding:14px;
+      border-radius:18px;
+      background:var(--soft);
+      border:1px solid #f2d3cb;
+    }
+
+    .info-strip strong{
+      display:block;
+      color:var(--primary);
+      margin-bottom:4px;
+    }
+
+    .full-menu{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .contact-card{
+      padding:24px;
+    }
+
+    .contact-card p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .contact-card .btn{
+      width:100%;
+      margin-top:8px;
+    }
+
+    .map-embed{
+      border:0;
+      width:100%;
+      min-height:100%;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      padding:30px 0 42px;
+      color:var(--muted);
+      text-align:center;
+      font-size:.95rem;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .full-menu,
+      .contact-wrap,
+      .grid-3,
+      .info-strip{
+        grid-template-columns:1fr;
+      }
+
+      .badges{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .topbar{
+        position:static;
+      }
+
+      .topbar-inner{
+        padding:12px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero{
+        padding-top:24px;
+      }
+
+      .hero-card,
+      .menu-card,
+      .contact-card,
+      .panel{
+        border-radius:18px;
+      }
+
+      .hero-card{
+        padding:24px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions,
+      .nav-cta{
+        flex-direction:column;
+      }
+
+      .section-head{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <strong>Quitapellejos Burguer</strong>
+        <span>Hamburguesería en Santiago El Mayor · Murcia</span>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:968346465">Llamar</a>
+        <a class="btn btn-primary" href="#carta">Ver carta</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-card">
+          <span class="eyebrow">Hamburguesería en Murcia</span>
+          <h1>Hamburguesas, montaditos y cenas para disfrutar en Santiago El Mayor</h1>
+          <p>En <strong>Quitapellejos Burguer</strong> encontrarás hamburguesas, sandwiches, montaditos, tostas, ensaladas, entrantes, postres y bebidas. Una carta variada para comer o cenar en Murcia con sabor clásico y opciones para todos.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:968346465">Llamar al 968 34 64 65</a>
+            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=C.+Alguazas,+3,+30012+Santiago+El+Mayor,+Murcia">Cómo llegar</a>
+          </div>
+
+          <div class="badges">
+            <div class="badge">Carta variada</div>
+            <div class="badge">Ubicación céntrica</div>
+            <div class="badge">Pedidos por teléfono</div>
+          </div>
+        </article>
+
+        <aside class="panel">
+          <div class="panel-top">
+            <h2>Datos del local</h2>
+          </div>
+          <div class="panel-body">
+            <ul class="panel-list">
+              <li>Teléfono: 968 34 64 65</li>
+              <li>Dirección: C. Alguazas, 3, 30012 Santiago El Mayor, Murcia</li>
+              <li>Especialidad: hamburguesas, montaditos, sandwiches y entrantes</li>
+              <li>Landing pensada para llamadas rápidas y mostrar carta</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container info-strip">
+        <div>
+          <strong>¿Dónde estamos?</strong>
+          Santiago El Mayor, Murcia
+        </div>
+        <div>
+          <strong>Teléfono</strong>
+          <a href="tel:968346465">968 34 64 65</a>
+        </div>
+        <div>
+          <strong>Tipo de cocina</strong>
+          Hamburguesería y bocadillos
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="carta">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Nuestra carta</h2>
+            <p>He organizado la carta en bloques para que la landing sea clara, rápida de leer y muy cómoda desde móvil.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="menu-card">
+            <h3>Hamburguesas y principales</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Hamburguesa con queso</strong><small>Queso, lechuga, tomate y cebolla</small></div><span class="price">3,50 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa normal</strong><small>Lechuga, tomate y cebolla</small></div><span class="price">3,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa York</strong><small>Jamón york, queso, lechuga, tomate y cebolla</small></div><span class="price">4,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa especial</strong><small>Bacon, queso, lechuga, tomate y cebolla</small></div><span class="price">4,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa Quita</strong><small>Huevo, bacon, queso, lechuga, tomate y cebolla</small></div><span class="price">5,75 €</span></div>
+              <div class="menu-item"><div><strong>Chicken Burger</strong><small>Pollo crispy, lechuga y mayonesa</small></div><span class="price">4,50 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Montaditos destacados</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Quitapellejos</strong><small>Bacon, tomate, anchoa y pepinillos</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Silvestre</strong><small>Jamón serrano, huevo cocido y ajo</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Marino</strong><small>Atún, pimiento morrón y mayonesa</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Manchego</strong><small>Anchoa, queso curado y tomate</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Lomo</strong><small>Lomo y tomate</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Noruego</strong><small>Salmón, huevo y mantequilla</small></div><span class="price">2,90 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Entrantes y postres</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Patatas bravas</strong></div><span class="price">3,50 €</span></div>
+              <div class="menu-item"><div><strong>Patatas fritas</strong></div><span class="price">2,50 €</span></div>
+              <div class="menu-item"><div><strong>Delicias de pollo</strong></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Tarta de la abuela</strong></div><span class="price">3,10 €</span></div>
+              <div class="menu-item"><div><strong>Gofre con chocolate</strong></div><span class="price">3,60 €</span></div>
+              <div class="menu-item"><div><strong>Flan de dulce de leche</strong></div><span class="price">3,10 €</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Carta completa por secciones</h2>
+            <p>La he pasado a formato web para que el cliente vea la variedad del local sin necesidad de ampliar una foto del menú.</p>
+          </div>
+        </div>
+
+        <div class="full-menu">
+
+          <article class="menu-card">
+            <h3>Entrantes</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Patatas bravas</strong></div><span class="price">3,50 €</span></div>
+              <div class="menu-item"><div><strong>Patatas fritas</strong></div><span class="price">2,50 €</span></div>
+              <div class="menu-item"><div><strong>Delicias de pollo</strong></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Delicias de queso camembert</strong><small>Con mermelada de tomate</small></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Palitos de queso mozzarella</strong></div><span class="price">4,50 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Principales</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Hamburguesa con queso</strong><small>Queso, lechuga, tomate, cebolla</small></div><span class="price">3,50 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa normal</strong><small>Lechuga, tomate, cebolla</small></div><span class="price">3,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa York</strong><small>Jamón york, queso, lechuga, tomate, cebolla</small></div><span class="price">4,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa especial</strong><small>Bacon, queso, lechuga, tomate, cebolla</small></div><span class="price">4,25 €</span></div>
+              <div class="menu-item"><div><strong>Hamburguesa Quita</strong><small>Huevo, bacon, queso, lechuga, tomate, cebolla</small></div><span class="price">5,75 €</span></div>
+              <div class="menu-item"><div><strong>Chicken Burger</strong><small>Pollo crispy, lechuga, mayonesa</small></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Combo 3 mini hamburguesas</strong><small>Ternera, pollo y foie</small></div><span class="price">4,00 €</span></div>
+              <div class="menu-item"><div><strong>Perrito montado</strong><small>Frankfurt, bacon y cebolla</small></div><span class="price">3,10 €</span></div>
+              <div class="menu-item"><div><strong>Perrito</strong><small>Frankfurt y cebolla</small></div><span class="price">2,80 €</span></div>
+              <div class="menu-item"><div><strong>Perrito especial</strong><small>Frankfurt, bacon, cebolla, queso</small></div><span class="price">3,30 €</span></div>
+              <div class="menu-item"><div><strong>Sandwich mixto</strong><small>Mantequilla, queso y jamón york</small></div><span class="price">3,50 €</span></div>
+              <div class="menu-item"><div><strong>Sandwich vegetal</strong><small>Espárrago, lechuga, tomate, huevo, atún, mayonesa</small></div><span class="price">5,00 €</span></div>
+              <div class="menu-item"><div><strong>Sandwich vegetal noruego</strong><small>Con salmón noruego</small></div><span class="price">5,90 €</span></div>
+              <div class="menu-item"><div><strong>Sandwich de pollo</strong><small>Lechuga, mayonesa, pollo</small></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Sandwich Spice</strong><small>Lechuga, mayonesa, pollo, bacon, tomate</small></div><span class="price">5,90 €</span></div>
+              <div class="menu-item"><div><strong>Catalana</strong><small>Jamón serrano, tomate, aceite, ajo</small></div><span class="price">3,30 €</span></div>
+              <div class="menu-item"><div><strong>Catalana con queso fresco</strong></div><span class="price">5,00 €</span></div>
+              <div class="menu-item"><div><strong>Catalana campera</strong><small>Lomo, jamón serrano, tomate, aceite, ajo, mayonesa</small></div><span class="price">5,00 €</span></div>
+              <div class="menu-item"><div><strong>Sobrasada</strong></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Sobrasada con queso fresco</strong></div><span class="price">4,50 €</span></div>
+              <div class="menu-item"><div><strong>Pincho moruno</strong></div><span class="price">3,00 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Montaditos</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Quitapellejos</strong><small>Bacon, tomate, anchoa, pepinillos</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Silvestre</strong><small>Jamón serrano, huevo cocido, ajo</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Marino</strong><small>Atún, pimiento morrón, mayonesa</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Malasombra</strong><small>Roquefort, sobrasada</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Manchego</strong><small>Anchoa, queso curado, tomate</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Maki</strong><small>Jamón york plancha, lechuga, mayonesa, tomate</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Franki</strong><small>Chorizo picante, cebolla frita</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Queso</strong><small>Queso fresco a la plancha, tomate</small></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Lomo</strong><small>Lomo, tomate</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Mini solomillo “El Abuelo”</strong><small>Solomillo de cerdo con salsa casera</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Pipiex</strong><small>Pechuga de pollo, queso fresco</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Lozano</strong><small>Lomo, jamón york, queso, mayonesa</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Noruego</strong><small>Salmón, huevo, mantequilla</small></div><span class="price">2,90 €</span></div>
+              <div class="menu-item"><div><strong>Salao</strong><small>Bacalao ahumado, tomate, orégano, aceite</small></div><span class="price">2,90 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Tostas</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Roquefort con anchoas</strong></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Queso fresco, pimiento morrón, tomate, anchoa</strong></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Salmón noruego con tomate</strong></div><span class="price">2,30 €</span></div>
+              <div class="menu-item"><div><strong>Lomos de sardina ahumada con tomate</strong></div><span class="price">2,30 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Ensaladas</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Ensalada vegetal</strong><small>Atún, tomate, espárrago, huevo, lechuga</small></div><span class="price">6,90 €</span></div>
+              <div class="menu-item"><div><strong>Ensalada rosa</strong><small>Tomate, cebolla, atún, lechuga, jamón york, zanahoria, salsa rosa</small></div><span class="price">7,90 €</span></div>
+              <div class="menu-item"><div><strong>Ensalada tropical</strong><small>Queso, jamón york, piña, nueces, manzana, pollo, salsa yogur</small></div><span class="price">8,00 €</span></div>
+              <div class="menu-item"><div><strong>Ensalada César</strong><small>Lechuga, pollo, picatostes, queso, salsa César</small></div><span class="price">8,00 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Postres</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Tarta de la abuela</strong></div><span class="price">3,10 €</span></div>
+              <div class="menu-item"><div><strong>Gofre con chocolate</strong></div><span class="price">3,60 €</span></div>
+              <div class="menu-item"><div><strong>Gofre con nata</strong></div><span class="price">3,60 €</span></div>
+              <div class="menu-item"><div><strong>Gofre con chocolate y nata</strong></div><span class="price">4,10 €</span></div>
+              <div class="menu-item"><div><strong>Sogas</strong><small>Canutillo crujiente artesanal relleno de helado de nata</small></div><span class="price">1,40 €</span></div>
+              <div class="menu-item"><div><strong>Flan de dulce de leche</strong></div><span class="price">3,10 €</span></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <h3>Bebidas</h3>
+            <div class="menu-list">
+              <div class="menu-item"><div><strong>Refrescos</strong><small>Coca-Cola, Zero, Zero-Zero, sin cafeína, Sprite, naranja, limón</small></div><span class="price">2,50 €</span></div>
+              <div class="menu-item"><div><strong>Aquarius / Nestea</strong></div><span class="price">2,50 €</span></div>
+              <div class="menu-item"><div><strong>Agua 50 cl</strong></div><span class="price">1,20 €</span></div>
+              <div class="menu-item"><div><strong>Zumos</strong><small>Piña, melocotón</small></div><span class="price">2,50 €</span></div>
+              <div class="menu-item"><div><strong>Cerveza copa</strong></div><span class="price">1,70 €</span></div>
+              <div class="menu-item"><div><strong>Cerveza tanque</strong></div><span class="price">3,00 €</span></div>
+              <div class="menu-item"><div><strong>Heineken 1/4</strong></div><span class="price">1,70 €</span></div>
+              <div class="menu-item"><div><strong>Heineken 1/3 / Águila sin filtrar / Radler</strong></div><span class="price">2,70 €</span></div>
+              <div class="menu-item"><div><strong>Alhambra 1/3</strong></div><span class="price">3,00 €</span></div>
+              <div class="menu-item"><div><strong>Cerveza sin alcohol 1/3</strong></div><span class="price">2,70 €</span></div>
+              <div class="menu-item"><div><strong>Cerveza jarra</strong></div><span class="price">8,00 €</span></div>
+              <div class="menu-item"><div><strong>Vino rosado o tinto copa</strong></div><span class="price">2,00 €</span></div>
+              <div class="menu-item"><div><strong>Vino rosado o tinto botella</strong></div><span class="price">9,50 €</span></div>
+              <div class="menu-item"><div><strong>Tinto de verano tanque</strong></div><span class="price">3,00 €</span></div>
+              <div class="menu-item"><div><strong>Tinto de verano jarra</strong></div><span class="price">8,00 €</span></div>
+              <div class="menu-item"><div><strong>Aceitunas rellenas o aliñadas</strong></div><span class="price">1,80 €</span></div>
+              <div class="menu-item"><div><strong>Cascaruja</strong></div><span class="price">1,80 €</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-wrap">
+        <article class="contact-card">
+          <h2>Contacto y ubicación</h2>
+          <p><strong>Quitapellejos Burguer</strong><br>C. Alguazas, 3, 30012 Santiago El Mayor, Murcia</p>
+          <p><strong>Teléfono:</strong> <a href="tel:968346465">968 34 64 65</a></p>
+          <a class="btn btn-primary" href="tel:968346465">Llamar ahora</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=C.+Alguazas,+3,+30012+Santiago+El+Mayor,+Murcia">Abrir en Google Maps</a>
+        </article>
+
+        <iframe
+          class="map-embed"
+          title="Mapa Quitapellejos Burguer"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=C.+Alguazas,+3,+30012+Santiago+El+Mayor,+Murcia&output=embed">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Quitapellejos Burguer · Hamburguesería en Murcia · Teléfono: 968 34 64 65
+    </div>
+  </footer>
+
+</body>
+</html>
