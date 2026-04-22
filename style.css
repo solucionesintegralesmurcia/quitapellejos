@@ -663,13 +663,15 @@ footer{
 }
 
 /* MÓVIL */
-@media (max-width:640px){
+@media screen and (max-width: 640px){
 
   .topbar{
-    position:static;
-    background:#fff;
-    box-shadow:none;
-    border-bottom:none;
+    position: relative !important;
+    top: auto !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    backdrop-filter: none !important;
+    background: #fff !important;
   }
 
   .topbar-inner{
@@ -678,8 +680,8 @@ footer{
     align-items:center;
     justify-content:center;
     gap:14px;
-    min-height:auto;
-    padding:20px 10px 12px;
+    min-height:auto !important;
+    padding:20px 10px 12px !important;
   }
 
   .brand{
@@ -691,10 +693,10 @@ footer{
 
   .brand-logo{
     display:block;
-    width:94%;
-    max-width:420px;
-    height:auto;
-    max-height:none;
+    width:94% !important;
+    max-width:420px !important;
+    height:auto !important;
+    max-height:none !important;
     object-fit:contain;
     margin:0 auto 6px;
   }
