@@ -72,22 +72,12 @@ img{
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
 }
 
 .brand-logo{
-  width:64px;
-  height:64px;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,var(--primary) 0%, #ff5a2c 100%);
-  color:#fff;
-  font-size:2rem;
-  font-weight:800;
-  box-shadow:var(--shadow-strong);
-  flex-shrink:0;
+  height:48px;
+  width:auto;
+  object-fit:contain;
 }
 
 .brand-text{
@@ -835,4 +825,14 @@ footer{
   border-color:var(--secondary);
   color:#111;
   transform:translateY(-1px);
+}
+@media (max-width:640px){
+  .brand{
+    justify-content:center;
+    width:100%;
+  }
+
+  .brand-logo{
+    height:40px;
+  }
 }
