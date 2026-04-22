@@ -236,16 +236,18 @@ img{
 
 .hero-card-photo{
   position:relative;
-  min-height:540px;
+  min-height:520px;
   background:
-    linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.62)),
-    url('hero-burguer.jpg') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.68)),
+    url('hero-burguer.jpg') center center / cover no-repeat;
+  border:1px solid rgba(255,255,255,.08);
 }
 
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.28) 55%, rgba(0,0,0,.45) 100%);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.40) 52%, rgba(0,0,0,.58) 100%);
 }
 
 .hero-content{
@@ -435,14 +437,14 @@ h3{
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:78px;
+  min-height:74px;
   padding:16px 18px;
-  border-radius:22px;
-  background:#fff;
+  border-radius:20px;
+  background:#ffffff;
   border:2px solid #eadfd2;
-  box-shadow:var(--shadow);
+  box-shadow:0 10px 24px rgba(0,0,0,.05);
   font-weight:900;
-  font-size:1.08rem;
+  font-size:1.04rem;
   text-align:center;
   transition:.2s ease;
 }
@@ -805,4 +807,30 @@ footer{
   .sticky-order-inner{
     grid-template-columns:1fr;
   }
+.top-products{
+  display:grid;
+  gap:12px;
+}
+
+.top-product-btn{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:72px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:#fff7ef;
+  border:2px solid #f1dfc8;
+  color:#191919;
+  font-weight:800;
+  font-size:1.02rem;
+  transition:.2s ease;
+}
+
+.top-product-btn:hover{
+  background:var(--secondary);
+  border-color:var(--secondary);
+  color:#111;
+  transform:translateY(-1px);
 }
