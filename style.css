@@ -718,7 +718,39 @@ footer{
     background: #fff !important;
  .footer-inner{
   gap:6px;
+.schedule-strip{
+  padding:0 0 20px;
 }
+
+.schedule-strip-inner{
+  grid-template-columns:1fr;
+  gap:12px;
+  padding:16px;
+  border-radius:20px;
+  border:1px solid #111;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+}
+
+.schedule-item{
+  padding:14px;
+  border-radius:16px;
+  background:rgba(0,0,0,.10);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.schedule-item strong{
+  font-size:1rem;
+  margin-bottom:6px;
+}
+
+.schedule-item span{
+  font-size:1rem;
+  line-height:1.45;
+}
+
+.schedule-item:last-child{
+  margin-bottom:0;
+}}
 
 .footer-inner p{
   font-size:.95rem;
