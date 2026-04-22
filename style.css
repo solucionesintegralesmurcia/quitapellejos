@@ -671,11 +671,13 @@ footer{
   }
 
   .brand-logo{
-    width:52px;
-    height:52px;
-    font-size:1.7rem;
-    border-radius:16px;
-  }
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  border-radius:12px;
+  background:#fff;
+  padding:6px;
+}
 
   .brand-text strong{
     font-size:1rem;
