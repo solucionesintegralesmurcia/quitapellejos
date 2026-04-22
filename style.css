@@ -609,6 +609,27 @@ footer{
   font-size:.97rem;
 }
 
+.footer-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-align:center;
+}
+
+.footer-inner p{
+  margin:0;
+  line-height:1.5;
+  width:100%;
+}
+
+.footer-credit{
+  color:var(--primary);
+  font-weight:800;
+  text-decoration:none;
+}
+
 /* TABLET */
 @media (max-width:980px){
   .hero-grid,
