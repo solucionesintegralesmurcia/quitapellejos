@@ -208,7 +208,7 @@ img{
   display:grid;
   grid-template-columns:1.12fr .88fr;
   gap:22px;
-  align-items:stretch;
+  align-items:start;
 }
 
 .hero-card,
