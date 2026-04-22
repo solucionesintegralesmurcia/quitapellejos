@@ -553,6 +553,37 @@ h3{
 
 .contact-card{
   padding:26px;
+/* 🔴 NUEVO DISEÑO BLOQUE ROJO PRO */
+.contact-card{
+  background: linear-gradient(135deg, #d62300, #a81b00);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border: 2px solid #111;
+}
+
+/* cajas internas (horario, reservas, ubicación) */
+.contact-card > div{
+  background: rgba(0,0,0,0.15);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* quitar margen al último */
+.contact-card > div:last-child{
+  margin-bottom: 0;
+}
+
+/* textos */
+.contact-card h3{
+  color: #fff;
+}
+
+.contact-card p{
+  color: rgba(255,255,255,0.9);
 }
 
 .contact-card p{
