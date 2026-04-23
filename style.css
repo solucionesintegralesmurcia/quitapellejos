@@ -681,7 +681,9 @@ footer{
 
 /* MÓVIL */
 @media screen and (max-width: 640px){
-
+.nav-cta-double{
+  display:none !important;
+}
   .topbar{
     position: relative !important;
     top: auto !important;
