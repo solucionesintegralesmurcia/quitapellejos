@@ -823,3 +823,17 @@ footer{
     display:none !important;
   }
 }
+.footer-link {
+  color: #744c95;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(116, 76, 149, 0.08);
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  background: #744c95;
+  color: #fff;
+  transform: scale(1.05);
+}
